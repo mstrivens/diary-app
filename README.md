@@ -1,10 +1,18 @@
 # Diary app
 
-## Must Have
+I set up my Gemfiles, Rspec and config.ru files
+
+I then looked at the first user story, created a domain model and created a feature test
 
 **As a user**\
 **So that I can keep a daily diary**\
 **I want to be able to add a new Diary Entry**
+
+I also create a database model and used that to create a new database using psql.
+
+## Must Have
+
+
 
 **As a user**\
 **So that I can identify my entry in future**\

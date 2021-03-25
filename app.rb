@@ -1,6 +1,7 @@
 require 'sinatra/base'
+require './lib/diary'
 
-class Diary < Sinatra::Base
+class MyDiary < Sinatra::Base
   enable :sessions
 
   get '/' do
@@ -8,12 +9,15 @@ class Diary < Sinatra::Base
   end
 
   post '/add' do
-    @entry = params[:new_entry]
+    # @entry = params[:new_entry]
+    Diary.add(params[:title], params[:new_entry])
+    @title = Diary.title.last
+    @entry = Diary.all.last
     erb(:add_entry)
   end
 
   # get '/add' do
-  #   @entry = session[:entry]
+  #   @entry = Diary.all.last
   #   erb(:add_entry)
   # end
 

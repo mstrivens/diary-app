@@ -10,9 +10,14 @@ end
 
 feature 'the saved entries are returned' do
   scenario 'returns entries' do
-    visit('/')
-    fill_in 'new_entry', with: "Hi, diary how are you?"
-    click_button 'release your secret'
+    fill_entry_submit
     expect(page).to have_content("Hi, diary how are you?")
+  end
+end
+
+feature 'each entry has a title' do
+  scenario 'return title' do
+    fill_entry_submit
+    expect(page).to have_content("First entry")
   end
 end
